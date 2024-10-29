@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Live Music Show",
+        "thumbnail": "/images/music-show-thumbnail.jpg",
+        "viewers": 12345,
+        "streamer": "DJ Nova",
+        "live": true
+    },
+    {
+        "id": 2,
+        "title": "Gaming Marathon",
+        "thumbnail": "/images/gaming-marathon-thumbnail.jpg",
+        "viewers": 9876,
+        "streamer": "GamerPro",
+        "live": true
+    },
+    {
+        "id": 3,
+        "title": "Cooking Masterclass",
+        "thumbnail": "/images/cooking-masterclass-thumbnail.jpg",
+        "viewers": 5432,
+        "streamer": "Chef Emma",
+        "live": true
+    },
+    {
+        "id": 4,
+        "title": "Tech Talk",
+        "thumbnail": "/images/tech-talk-thumbnail.jpg",
+        "viewers": 3210,
+        "streamer": "TechGuru",
+        "live": true
+    }
+]

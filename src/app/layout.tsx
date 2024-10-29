@@ -1,6 +1,9 @@
+// RootLayout.tsx o similar
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "@/components/navBars/NavBar";
+import { InLiveGlobalProvider } from "@/context/InLiveGlobalState";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,11 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <InLiveGlobalProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <NavBar />
+          {children} {/* Asegúrate de que esto esté bien renderizado */}
+        </body>
+      </InLiveGlobalProvider>
     </html>
   );
 }

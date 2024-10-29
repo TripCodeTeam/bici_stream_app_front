@@ -1,25 +1,19 @@
+import { UserDto } from "@/types/user";
+import axios from "axios";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
-    const { email, username, completeName, role, password } = await req.json();
+    const { username } = await req.json();
 
-    const response = await fetch(
+    const response = await axios.get(
       `https://z8mx7lws-3000.use.devtunnels.ms/users/${username}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, username, completeName, role, password }),
-      }
+      {}
     );
 
-    const data = await response.json();
+    console.log(response);
 
-    if (!response.ok) {
-      throw new Error(data.error || "Failed to create user");
-    }
+    const data: UserDto = response.data;
 
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {

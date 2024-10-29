@@ -22,18 +22,15 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const { email, username, completeName, role, password } = await req.json();
+    const { email, username, completeName, role, password, birth } = await req.json();
 
-    const response = await fetch(
-      "https://z8mx7lws-3000.use.devtunnels.ms/users",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, username, completeName, role, password }),
-      }
-    );
+    const response = await fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, username, completeName, role, password, birth }),
+    });
 
     const data = await response.json();
 
